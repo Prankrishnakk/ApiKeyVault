@@ -89,7 +89,7 @@ namespace Application.Services
             if (string.IsNullOrWhiteSpace(dto.KeyName))
                 throw new ArgumentException("KeyName is required.", nameof(dto.KeyName));
 
-            if (dto.RotationMinutes <= 0)
+            if (dto.RotationMinutes < 0)
                 throw new ArgumentException("RotationMinutes must be greater than zero.", nameof(dto.RotationMinutes));
         }
 
@@ -104,7 +104,7 @@ namespace Application.Services
             if (string.IsNullOrWhiteSpace(apiKey.KeyName))
                 throw new ArgumentException("KeyName is required.", nameof(apiKey.KeyName));
 
-            if (apiKey.RotationMinutes <= 0)
+            if (apiKey.RotationMinutes < 0)
                 throw new ArgumentException("RotationMinutes must be greater than zero.", nameof(apiKey.RotationMinutes));
         }
     }
